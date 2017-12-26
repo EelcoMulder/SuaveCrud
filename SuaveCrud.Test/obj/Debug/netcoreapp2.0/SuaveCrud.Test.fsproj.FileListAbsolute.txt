@@ -1,0 +1,12 @@
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Test.deps.json
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Test.runtimeconfig.json
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Test.runtimeconfig.dev.json
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Test.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Test.pdb
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Web.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\bin\Debug\netcoreapp2.0\SuaveCrud.Web.pdb
+C:\FSharp\SuaveCrud\SuaveCrud.Test\obj\Debug\netcoreapp2.0\SuaveCrud.Test.dll
+C:\FSharp\SuaveCrud\SuaveCrud.Test\obj\Debug\netcoreapp2.0\SuaveCrud.Test.pdb
