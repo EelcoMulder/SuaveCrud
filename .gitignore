@@ -2,3 +2,5 @@
 /SuaveCrud.Web/obj
 /.vscode
 /packages
+/SuaveCrud.Test/bin
+/SuaveCrud.Test/obj
