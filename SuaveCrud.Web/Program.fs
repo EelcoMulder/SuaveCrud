@@ -8,19 +8,24 @@ open Successful
 open SuaveCrud.BusinessLogic
 open Series
 open SuaveCrud.Types
-let getSeriesAsJson =
-  getSeries |> toJson
 
-let fromJson<'a> (req: HttpRequest) =
-  let json = req.rawForm |> System.Text.Encoding.UTF8.GetString
-  Newtonsoft.Json.JsonConvert.DeserializeObject(json, typeof<'a>) :?> 'a
+// make generic
+let handlePutSerie id = 
+  request (fun r ->
+    let putBody = fromJson<Serie> r
+    OK (updateSerie (id, putBody))
+  ) 
 
 let appWebPart =
   choose
     [ GET >=> choose
-        [ path "/api/series" >=> getSeriesAsJson ] 
+        [ path "/api/series" >=> toJson getSeries ] 
       POST >=> choose
-        [ path "/api/series" >=> request( fromJson<Serie> >> addSerie >> OK >> toJson )  ] ]
+        [ path "/api/series" >=> request( fromJson<Serie> >> addSerie >> OK )  ] 
+      PUT >=> choose
+        [ pathScan "/api/series/%d" handlePutSerie ]
+      DELETE >=> choose
+        [ pathScan "/api/series/%d" (fun id -> OK (deleteSerie id)) ] ]
           
 [<EntryPoint>]
 let main argv =
