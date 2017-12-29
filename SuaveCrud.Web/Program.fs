@@ -19,7 +19,8 @@ let handlePutSerie id =
 let appWebPart =
   choose
     [ GET >=> choose
-        [ path "/api/series" >=> toJson getSeries ] 
+        [ path "/api/series" >=> toJson getSeries 
+          path "/api/series/%d" >=> (fun id -> toJson getSerie id) ] 
       POST >=> choose
         [ path "/api/series" >=> request( fromJson<Serie> >> addSerie >> OK )  ] 
       PUT >=> choose
