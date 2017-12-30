@@ -9,24 +9,36 @@ open SuaveCrud.BusinessLogic
 open Series
 open SuaveCrud.Types
 
+
 // make generic
 let handlePutSerie id = 
   request (fun r ->
     let putBody = fromJson<Serie> r
-    OK (updateSerie (id, putBody))
+    updateSerie (id, putBody)
+    OK("Updated")
   ) 
+
+let handPostSerie = 
+  request (fun r -> 
+    let newSerie = fromJson<Serie> r
+    OK (addSerie newSerie |> toJson)
+  ) >=> Writers.setMimeType "application/json; charset=utf-8"
+
+let handleDeleteSerie id = 
+  deleteSerie id
+  OK("Deleted")
 
 let appWebPart =
   choose
     [ GET >=> choose
-        [ path "/api/series" >=> toJson getSeries 
-          path "/api/series/%d" >=> (fun id -> toJson getSerie id) ] 
+        [ path "/api/series" >=> Writers.setMimeType "application/json; charset=utf-8" >=> OK(toJson getSerie)
+          pathScan "/api/series/%d" (fun id -> Writers.setMimeType "application/json; charset=utf-8" >=> OK(getSerie(id) |> toJson)) ] 
       POST >=> choose
-        [ path "/api/series" >=> request( fromJson<Serie> >> addSerie >> OK )  ] 
+        [ path "/api/series" >=> handPostSerie ] 
       PUT >=> choose
         [ pathScan "/api/series/%d" handlePutSerie ]
       DELETE >=> choose
-        [ pathScan "/api/series/%d" (fun id -> OK (deleteSerie id)) ] ]
+        [ pathScan "/api/series/%d" handleDeleteSerie ] ]
           
 [<EntryPoint>]
 let main argv =

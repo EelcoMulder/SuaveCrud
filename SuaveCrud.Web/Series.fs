@@ -1,5 +1,5 @@
 namespace SuaveCrud.BusinessLogic
-
+open System
 open SuaveCrud.Database
 open SuaveCrud.Types
 open DatabaseContext
@@ -30,15 +30,15 @@ module Series =
         query { for c in ctx.Dbo.Series do
                 sortBy c.Name
                 select c } 
-        |> Seq.map (fun x -> x.MapTo<Serie>())
-
+        |> Seq.map (fun x -> x.MapTo<Serie>)
+    // whta is unit here?
     let addSerie (s: Serie) = 
         let ctx = getContext
         let addSerie = ctx.Dbo.Series.Create()
         addSerie.Name <- s.Name
         addSerie.Description <- s.Description
         ctx.SubmitUpdates()
-        "Serie added"
+        addSerie.MapTo<Serie>
 
     let updateSerie (id: int, serie: Serie) =
         let (c, s) = getSerieWithContext id
@@ -47,7 +47,6 @@ module Series =
                 storedSerie.Name <- serie.Name
                 storedSerie.Description <- serie.Description
                 c.SubmitUpdates()
-                "Serie updated"
             | None -> failwith "Serie not found"
         
     let deleteSerie (id: int) = 
@@ -56,5 +55,4 @@ module Series =
             | Some storedSerie ->
                 storedSerie.Delete()
                 c.SubmitUpdates()
-                "Serie deleted"
             | None -> failwith "Serie not found"                            

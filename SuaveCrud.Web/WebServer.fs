@@ -3,15 +3,13 @@ open Newtonsoft.Json
 open Newtonsoft.Json.Serialization
 open Suave
 open Operators
-open Successful
 
 module WebServer =
     let toJson v =
       let jsonSerializerSettings = JsonSerializerSettings()
       jsonSerializerSettings.ContractResolver <- CamelCasePropertyNamesContractResolver()
       JsonConvert.SerializeObject(v, jsonSerializerSettings)
-          |> OK // move this to elsewhere
-          >=> Writers.setMimeType "application/json; charset=utf-8"
+
 
     let fromJson<'a> (req: HttpRequest) =
       let json = req.rawForm |> System.Text.Encoding.UTF8.GetString
