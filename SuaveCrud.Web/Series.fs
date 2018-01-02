@@ -1,5 +1,4 @@
 namespace SuaveCrud.BusinessLogic
-open System
 open SuaveCrud.Database
 open SuaveCrud.Types
 open DatabaseContext
@@ -31,7 +30,7 @@ module Series =
                 sortBy c.Name
                 select c } 
         |> Seq.map (fun x -> x.MapTo<Serie>)
-    // whta is unit here?
+        
     let addSerie (s: Serie) = 
         let ctx = getContext
         let addSerie = ctx.Dbo.Series.Create()
