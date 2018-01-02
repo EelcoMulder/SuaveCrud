@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SuaveCrud.Web", "SuaveCrud.Web\SuaveCrud.Web.fsproj", "{1A1DA909-29D2-4EE8-9ED4-6DCE439ECDF1}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SuaveCrud.Test", "SuaveCrud.Test\SuaveCrud.Test.fsproj", "{AF9BBCE8-CBFD-40B2-949B-7976C322091E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,17 +30,5 @@ Global
 		{1A1DA909-29D2-4EE8-9ED4-6DCE439ECDF1}.Release|x64.Build.0 = Release|x64
 		{1A1DA909-29D2-4EE8-9ED4-6DCE439ECDF1}.Release|x86.ActiveCfg = Release|x86
 		{1A1DA909-29D2-4EE8-9ED4-6DCE439ECDF1}.Release|x86.Build.0 = Release|x86
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|x64.ActiveCfg = Debug|x64
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|x64.Build.0 = Debug|x64
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|x86.ActiveCfg = Debug|x86
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Debug|x86.Build.0 = Debug|x86
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|x64.ActiveCfg = Release|x64
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|x64.Build.0 = Release|x64
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|x86.ActiveCfg = Release|x86
-		{AF9BBCE8-CBFD-40B2-949B-7976C322091E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
